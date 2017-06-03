@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <script>
+            /**
+             * Use given methods(`isZero`, `add1`, `sub1`) to
+             * implement `+`, `-`, `*`, `/`, `>`, `<`, `==`, `%` equivalent functions
+             * for nonnegative integers(0, 1, 2, 3, ...)
+             *
+             * Note:
+             *   1. DONOT use any of these operators(`+`, `-`, `*`, `/`, `>`, `<`, `==`, `%`) in your implementation
+             *   2. ALSO DONOT use operators like `++`, `--`, `&`, `~`, `<<`, `>>`, `<<<`, `>>>`
+             *   3. Given methods are using `+`, `-`, `==` because they are Given methods
+             */
+
+// START: Given methods
+            function isZero(n) {
+                return n == 0;
+            }
+
+            function add1(n) {
+                return n + 1;
+            }
+
+            function sub1(n) {
+                return n - 1;
+            }
+// END: Givin methods
+// =====================================
+
+
+
+
+
+
+// START: Implementation
+// implement `+`
+            function add(a, b) {
+                if (!isZero(b)) {
+                    var temp = add(add1(a), sub1(b));
+                    return temp;
+                } else {
+                    return a;
+                }
+            }
+// implement `-`
+            function sub(a, b) {
+                if (!isZero(b)) {
+                    var temp = sub(sub1(a), sub1(b));
+                    return temp;
+                } else {
+                    return a;
+                }
+            }
+
+// implement `*`
+            function multiple(a, b) {
+                if (!isZero(b)) {
+                    var temp = add(a, a);
+                    multiple(a, sub1(b));
+                    return temp;
+                } else {
+                    return a;
+                }
+            }
+
+// implement `/`
+            function divide(a, b) {
+
+            }
+
+// implement `>`
+            function greaterThan(a, b) {
+
+            }
+
+// implement `<`
+            function lessThan(a, b) {
+
+            }
+
+// implement `=`
+            function eq(a, b) {
+
+            }
+
+// implement `%`
+            function remainder(a, b) {
+
+            }
+// END: Implementation
+
+
+
+
+
+// =====================================
+            /*
+             * example tests
+             */
+            console.log("Testing `add`:         ", add(3, 5) == 8);
+            console.log("Testing `sub`:         ", sub(9, 5) == 4);
+            console.log("Testing `multiple`:    ", multiple(3, 5) == 15);
+            console.log("Testing `divide`:      ", divide(9, 5) == 1);
+            console.log("Testing `greaterThan`: ", greaterThan(3, 5) == false);
+            console.log("Testing `lessThan`:    ", lessThan(3, 5) == true);
+            console.log("Testing `eq`:          ", eq(3, 5) == true);
+            console.log("Testing `remainder`:   ", remainder(9, 5) == 4);
+
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
