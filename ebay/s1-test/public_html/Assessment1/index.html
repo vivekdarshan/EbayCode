@@ -73,6 +73,13 @@ and open the template in the editor.
 
 // implement `/`
             function divide(a, b) {
+                if(isZero(b)) {
+                    throw 'Division by zero is undefined: ' + a + '/' + b;
+                }else {
+                    var temp = add(b, b);
+                    divide(a, add1(b));
+                    return a;
+                }
 
             }
 
@@ -93,7 +100,13 @@ and open the template in the editor.
 
 // implement `%`
             function remainder(a, b) {
-
+                if(!isZero(b)) {
+                    var temp = sub(a, b);
+                    remainder(a, sub1(b));
+                    return a;
+                } else {
+                    return a;
+                }
             }
 // END: Implementation
 

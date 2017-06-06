@@ -101,7 +101,7 @@ var app = angular.module('myApp', ['nvd3']).config(function ($provide) {
     setInterval(function () {
         $http({
             method: 'GET',
-            url: '/test/s1-test/public_html/Assessment2/statistics.php'
+            url: 'http://localhost/dashboard/statistics.php'
         }).then(function successCallback(response) {
             if (response.data.cpu) {
                 $scope.data[0].values.push({
